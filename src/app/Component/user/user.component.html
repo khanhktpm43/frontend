@@ -1,0 +1,64 @@
+
+<div class="container">
+    <div class="caption">
+      <i class="fa-solid fa-tag"></i>
+      <span>Người dùng</span>
+    </div>
+    <div class="main">
+      
+        <button class="btn btn-outline-info" (click)="create()">Thêm người dùng</button>
+       
+      <div class="table">
+        <span>Danh sách người dùng</span>
+        <div class="form-group" style="margin-bottom: 30px;">
+          <label for="search-text"> Tìm kiếm theo từ khóa </label>
+          <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
+            [(ngModel)]="searchText" placeholder="nhập từ khóa" 
+            autofocus>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+            
+              <th>Họ tên</th>
+              <th>Căn cước</th>
+              <th>Điện thoại</th>
+              <th>Quyền</th>
+              <th>Ngày thi</th>
+              <th>Kết quả</th>
+              <th>Chức năng</th>
+              
+              
+              
+            </tr>
+          </thead>
+          <tbody *ngFor="let item of listUser | searchFilter: searchText   | paginate : { itemsPerPage: 10, currentPage: p }, index as i " >
+            <tr>
+              
+              <td>{{item.id}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.cccd}}</td>
+              <td>{{item.phone}}</td>
+              <td style="font-size: 80%;">{{item.role}}</td>
+              <td style="font-size: 80%;" *ngIf="item.examInfo != null">{{item.examInfo.date | date: 'dd/MM/yyyy' }}</td>
+              <td style="font-size: 80%;" *ngIf="item.examInfo == null">Chưa thi</td>
+              <td style="font-size: 80%;" *ngIf="item.examInfo != null && item.examInfo.score >=20">Đạt</td>
+              <td style="font-size: 80%;" *ngIf="item.examInfo != null && item.examInfo.score <20">Không đạt</td>
+              <td style="font-size: 80%;" *ngIf="item.examInfo == null">Chưa thi</td>
+              <td>
+                <div *ngIf="item.examInfo != null" class="control" style="font-size: 80%;">
+                 
+                   <button style="margin: auto;" (click)="detail(item)">Chi tiết</button>
+                </div>
+              </td>
+              
+            </tr>
+          </tbody>
+        </table>
+        <pagination-controls style="text-align: center;" (pageChange)="p = $event"></pagination-controls>
+      </div>
+        
+  
+   
+  </div>

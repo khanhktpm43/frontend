@@ -1,0 +1,53 @@
+
+<div class="container">
+    <div class="caption">
+      <i class="fa-solid fa-tag"></i>
+      <span>Câu hỏi</span>
+    </div>
+    <div class="main">
+      
+        <button class="btn btn-outline-info" (click)="create()">Thêm câu hỏi</button>
+       
+      <div class="table">
+        <span>Danh sách câu hỏi</span>
+        <div class="form-group" style="margin-bottom: 30px;">
+          <label for="search-text"> Tìm kiếm theo từ khóa </label>
+          <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
+            [(ngModel)]="searchText" placeholder="nhập từ khóa" 
+            autofocus>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+            
+              <th>Câu hỏi</th>
+              <th style="min-width: 250px;">Hình ảnh</th>
+              <th style="max-width: 180px; min-width: 180px;">Chức năng</th>
+              
+              
+              
+            </tr>
+          </thead>
+          <tbody *ngFor="let item of listQuestion | searchFilter: searchText   | paginate : { itemsPerPage: 10, currentPage: p }, index as i " >
+            <tr>
+              
+              <td>{{item.id}}</td>
+              <td style="font-size: 90%; max-width: 350px;">{{item.question}}</td>
+              <td style="font-size: 60%; max-width: 350px; word-wrap: break-word;">{{item.image}}</td>
+              <td>
+                <div class="control " style="font-size: 80%; justify-content: center;">
+                  <button style="margin: 0 10px 0 10px ;" (click)="delete(item.id)">Xóa</button>
+                   <button style="margin: 0 10px 0 10px ;" (click)="update(item.id)">Chi tiết</button>
+                </div>
+              </td>
+              
+            </tr>
+          </tbody>
+        </table>
+        <pagination-controls class="text-center" (pageChange)="p = $event"></pagination-controls>
+      </div>
+        
+  
+   
+  </div>

@@ -1,0 +1,134 @@
+.container{
+    min-width: 880px;
+    width: 100%;
+    border: 1px solid gray;
+}
+.container .caption{
+    position: relative;
+    width: 100%;
+    height: 34px;
+    padding: 0px 20px;
+    background-color: #428BCA;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+}
+.caption i{
+    margin-right: 10px;
+
+}
+.caption span{
+    font-weight: 600;
+    color: #fff;
+}
+
+.container .main{
+    width: 100%;
+    padding: 20px 30px ;
+}
+
+.main .create-form{
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 20px 10px;
+    border: 1.5px solid #428BCA;
+    border-radius: 16px;
+    min-height: 60px;
+}
+
+.dapAn{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-left: 60px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.them{
+    padding: 10px;
+}
+
+.create-form span{
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background-color: #fff;
+    padding: 0px 20px;
+    color: #428BCA;
+    font-weight: 600;
+}
+.create-form form{
+    width: 100%;
+    padding: 0px 20px;
+}
+form input{
+    width: 300px;
+    height: 30px;
+    padding: 0px 20px;
+    margin-right: 15px;
+    border-radius: 6px;
+    border: 1px solid gray
+}
+form input:focus{
+    outline: none;
+    border: 1.5px solid #428BCA;
+
+}
+form button{
+    height: 30px;
+    width: 110px;
+    border-radius: 6px;
+    border: none;
+    background-color: #428BCA;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 2px 5px 9px -4px gray;
+}
+
+.table{
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    border: 1.5px solid #428BCA;
+    padding: 20px 10px;
+    border-radius: 16px;
+}
+.table span{
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background-color: #fff;
+    padding: 0px 20px;
+    color: #428BCA;
+    font-weight: 600;
+}
+table{
+    margin-top: 10px;
+    border: 1px solid #428BCA;
+    width: 100%;
+    border-collapse: collapse;
+}
+table  th , td{
+    border: 1px solid #428BCA;
+    text-align: center;
+}
+td .control{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.control button{
+    padding:0px 10px;
+    margin-right: 20px;
+    background-color: #428BCA;
+    color: #fff;
+    border: none;
+    border-radius:5px;
+    font-weight: 600;
+    box-shadow: 2px 5px 9px -4px gray;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}

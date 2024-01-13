@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="caption">
+    <i class="fa-solid fa-tag"></i>
+    <span>Câu hỏi</span>
+    <div class="back-area">
+      <button style="position: absolute; right: 30px; top: 2px;
+        background-color: whith; color: #428BCA; border: none;" (click)="goBack()">Quay lại</button>
+    </div>
+  </div>
+  <div class="main">
+    <div class="create-form">
+      <span>Thêm câu hỏi</span>
+      <form class="them" #formCreate="ngForm" (ngSubmit)="create(formCreate)"
+        style="display: flex; flex-direction: column;">
+        <textarea rows="3" cols="50" style="margin-bottom: 20px;" [(ngModel)]="question.question" name="name"
+          #name="ngModel" type="text" placeholder="Nội dung câu hỏi" autocomplete="off" required></textarea>
+        <input style="margin-bottom: 10px; padding: 5px; height: auto; width: 35%;" type="file"
+          (change)="onFileChange($event)">
+        <div style="margin-bottom: 20px;" class="choose">
+          <label>Danh mục:</label>
+          <select name="category" [(ngModel)]="question.category" required>
+            <option *ngFor="let item2 of listCategory" [ngValue]="item2">{{item2.name}}</option>
+
+          </select>
+        </div>
+        <div class="dapAn" name="create-form">
+          <textarea rows="2" cols="50" [(ngModel)]="answer1.answer" name="answer" #answer="ngModel" type="text"
+            placeholder="Nội dung câu trả lời" autocomplete="off" required></textarea>
+
+          <input style="width: 100px;" name="gender" (change)="answer1.check = true" [checked]="answer1.check"
+            type="radio" />Đúng
+        </div>
+        <div class="dapAn" name="create-form">
+          <textarea rows="2" cols="50" [(ngModel)]="answer2.answer" name="answer" #answer="ngModel" type="text"
+            placeholder="Nội dung câu trả lời" autocomplete="off" required></textarea>
+
+          <input style="width: 100px;" name="gender" (change)="answer2.check = true" [checked]="answer2.check"
+            type="radio" />Đúng
+        </div>
+        <div class="dapAn" name="create-form">
+          <textarea rows="2" cols="50" [(ngModel)]="answer3.answer" name="answer" #answer="ngModel" type="text"
+            placeholder="Nội dung câu trả lời" autocomplete="off" required></textarea>
+
+          <input style="width: 100px;" name="gender" (change)="answer3.check = true" [checked]="answer3.check"
+            type="radio" />Đúng
+        </div>
+        <div class="dapAn" name="create-form">
+          <textarea rows="2" cols="50" [(ngModel)]="answer4.answer" name="answer" #answer="ngModel" type="text"
+            placeholder="Nội dung câu trả lời" autocomplete="off" required></textarea>
+
+          <input style="width: 100px;" name="gender" (change)="answer4.check = true" [checked]="answer4.check"
+            type="radio" />Đúng
+        </div>
+        <button style="margin-top: 20px;">Thêm mới</button>
+      </form>
+    </div>
+
+  </div>
+
+
+</div>

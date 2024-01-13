@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="caption" style="display: flex;">
+    <i class="fa-solid fa-tag"></i>
+    <div class="back-area">
+      <button style="background-color: whith; color: #428BCA; border: none;" (click)="goBack()">Quay lại</button>
+    </div>
+  </div>
+  <div class="main">
+
+
+
+    <div class="table">
+      <span>Chi tiết câu hỏi</span>
+      <h3>{{question.question}}</h3>
+      <img *ngIf="question.image != null" src={{question.image}}>
+      <ul *ngFor=" let item of question.answerList">
+        <li [ngStyle]="{'color': item.check ? 'green' : 'red'}">
+          {{item.answer}}
+        </li>
+      </ul>
+    </div>
+
+
+
+  </div>

@@ -1,0 +1,56 @@
+<style>
+  .true {
+    background-color: rgb(13, 158, 32);
+  }
+
+  .false {
+    background-color: rgb(208, 22, 22);
+  }
+</style>
+<div class="container">
+  <div class="caption" style="display: flex;">
+    <i class="fa-solid fa-tag"></i>
+
+    <button style="background-color: whith; color: #428BCA; border: none;" 
+    (click)="goBack()">Quay lại</button>
+
+  </div>
+  <div class="main">
+
+    <div class="table">
+      <span>Xem lại bài thi</span>
+
+      <Div class="Question" *ngFor="let item of listResult, index as i">
+        <div class="content">
+          <div style="font-size: 22px;">
+            <p style="color: maroon; margin-bottom: 5px;">Câu hỏi {{i+1}} : </p>
+            {{item.question?.question}}
+          </div>
+          <img *ngIf="item.question?.image != null" src={{item.question?.image}}>
+        </div>
+
+        <div class="answers">
+          <div class="choose" *ngFor="let answer of checkAnswerOfQuestion(item.question), index as j">
+
+            <button style="height: 45px;" class="btn btn-outline-dark"
+            [ngStyle]="{
+              'background-color': (answer.check ) ? 'limegreen' : (!answer.check && answer.id === item.answer) ? 'crimson' : ''
+            }">{{myArray[j]}}: </button>
+
+            <p style="margin: 0 0 0 10px;">{{answer.answer}}</p>
+          </div>
+        </div>
+
+        <!-- <div class="choose" *ngFor="let answer of item.question?.answerList  , index as j">
+          <button [ngStyle]="{
+                'background-color': (answer.check ) ? 'green' : (!answer.check && answer.id === item.answer) ? 'red' : ''
+              }">{{myArray[j]}}: {{answer.answer}}</button>
+        </div> -->
+
+      </Div>
+
+    </div>
+  </div>
+
+
+</div>

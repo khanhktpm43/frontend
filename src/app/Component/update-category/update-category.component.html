@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="caption">
+      <i class="fa-solid fa-tag"></i>
+      <div class="back-area">
+        <button style="background-color: whith; color: #428BCA; border: none;" (click)="goBack()">Quay lại</button>
+      </div>
+    </div>
+    <div class="main">
+      <div class="create-form">
+        <span>Cập nhật danh mục</span>
+        <form #formUpdate="ngForm" (ngSubmit)="update(formUpdate)">
+          <input [(ngModel)]="category.name" name="name" #name="ngModel" type="text" placeholder="Tên danh mục"
+            autocomplete="off" required>
+            <input [(ngModel)]="category.number" name="number" #number="ngModel" type="text" placeholder="Số câu trong đề"
+            autocomplete="off" required>
+          <button>Cập nhật</button>
+        </form>
+      </div>
+      
+    </div>
+  
+    
+  </div>

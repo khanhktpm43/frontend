@@ -1,0 +1,82 @@
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', 'Segoe UI';
+    background: url(http://localhost:4200/assets/images/banner-2.jpg);
+    background-size: cover;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+form {
+    width: 300px;
+    height: 420px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 4px 25px 0 rgba(0, 0, 0, 0.2), 0 30px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+form .info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form .info h3 {
+    font-size: 24px;
+    text-align: center;
+}
+
+form .info h4 {
+    font-size: 30px;
+    margin: unset;
+}
+
+.info img {
+    width: 115px;
+    height: 115px;
+}
+
+.info span {
+    margin-top: 10px;
+    width: 89%;
+    height: 2px;
+    border-bottom: 1px solid gray;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 220px;
+    height: 34px;
+    border: 1px solid #ddd;
+    margin-top: 15px;
+    border-radius: 5px;
+    padding-left: 20px;
+}
+
+form button {
+    width: 243px;
+    height: 34px;
+    margin-top: 15px;
+    background-color: #3399ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #2288cc;
+}

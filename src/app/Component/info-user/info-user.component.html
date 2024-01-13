@@ -1,0 +1,25 @@
+
+<div class="container">
+    <div class="caption">
+      <i class="fa-solid fa-tag"></i>
+      <span>Tổng cục đường bộ Việt Nam</span>
+    </div>
+    <div class="main">
+     
+      <div class="table" style="padding: 30px;">
+        <span>Thông tin thí sinh</span>
+       <div>Họ và tên: {{user.name}}</div>
+       <div>Căn cước công dân: {{user.cccd}}</div>
+       <div>Số điện thoại: {{user.phone}}</div>
+       
+       <div *ngIf="user.examInfo != null">Số câu đúng: {{user.examInfo.score}}/25</div>
+       <div *ngIf="user.examInfo != null && user.examInfo.score >=20 ">Kết quả: Đạt </div>
+       <div *ngIf="user.examInfo != null && user.examInfo.score <20 ">Kết quả: Không đạt </div>
+      <button class="btn btn-outline-info" *ngIf="user.examInfo == null"  (click)="start()">Bắt đầu thi</button>
+      <button class="btn btn-outline-warning" *ngIf="user.examInfo != null" (click)="click()">Xem lại bài</button>
+      <button class="btn btn-outline-danger"  (click)="logout()">Đăng xuất</button>
+      </div>
+    </div>
+  
+    
+  </div>
