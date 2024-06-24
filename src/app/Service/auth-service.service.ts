@@ -9,7 +9,7 @@ import { map } from 'rxjs';
 })
 export class AuthService {
   public flag: boolean = false
-  private REST_API_SERVER = 'http://localhost:8181/api/user';
+  private REST_API_SERVER = 'http://localhost:8080/api/user';
   private readonly TOKEN_KEY="authorization"
 
 
@@ -21,6 +21,9 @@ export class AuthService {
   getAll(): Observable<any> {
     return this.httpClient.get<any>(`${this.REST_API_SERVER}/`);
   }
+  getById(id: number): Observable<any> {
+    return this.httpClient.get<any>(`${this.REST_API_SERVER}/`+id);
+  }
   register(user: any): Observable<any> {
     return this.httpClient.post(`${this.REST_API_SERVER}/register`, user);
   }
@@ -29,6 +32,9 @@ export class AuthService {
  
     return this.httpClient.post(`${this.REST_API_SERVER}/login`, user);
 
+  }
+  edit(id: number, info: any): Observable<any>{
+    return this.httpClient.post(`${this.REST_API_SERVER}/edit-info/` + id, info);
   }
   logout(): Observable<any> {
  

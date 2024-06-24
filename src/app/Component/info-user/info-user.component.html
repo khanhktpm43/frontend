@@ -14,7 +14,7 @@
        
        <div *ngIf="user.examInfo != null">Số câu đúng: {{user.examInfo.score}}/25</div>
        <div *ngIf="user.examInfo != null && user.examInfo.score >=20 ">Kết quả: Đạt </div>
-       <div *ngIf="user.examInfo != null && user.examInfo.score <20 ">Kết quả: Không đạt </div>
+       <div *ngIf="user.examInfo != null && user.examInfo.score < 20 ">Kết quả: Không đạt </div>
       <button class="btn btn-outline-info" *ngIf="user.examInfo == null"  (click)="start()">Bắt đầu thi</button>
       <button class="btn btn-outline-warning" *ngIf="user.examInfo != null" (click)="click()">Xem lại bài</button>
       <button class="btn btn-outline-danger"  (click)="logout()">Đăng xuất</button>

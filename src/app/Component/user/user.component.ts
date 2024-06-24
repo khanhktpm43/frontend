@@ -30,4 +30,8 @@ detail(item:any){
 
 this.router.navigate(['user/detail/',item.examInfo.id]);
 }
+edit(id:number){
+
+  this.router.navigate(['user/edit-info/',id]);
+  }
 }

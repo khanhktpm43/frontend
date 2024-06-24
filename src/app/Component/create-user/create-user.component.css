@@ -26,7 +26,17 @@
     width: 100%;
     padding: 20px 30px ;
 }
-
+button{
+    padding:0px 10px;
+    margin-right: 20px;
+    background-color: #428BCA;
+    color: #fff;
+    border: 1px solid white;
+    border-radius:5px;
+    font-weight: 600;
+    box-shadow: 2px 5px 9px -4px gray;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 .main .create-form{
     position: relative;
     margin-top: 20px;

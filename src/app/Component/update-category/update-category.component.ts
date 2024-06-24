@@ -8,17 +8,17 @@ import { Location } from '@angular/common';
   styleUrls: ['./update-category.component.css']
 })
 export class UpdateCategoryComponent {
-public category: Category
-constructor(private location:Location,private service: CategoryServiceService){
-  this.category={
-    id:0,
-    name:"",
-    number:0,
-    questionList:[]
+  public category: Category
+  constructor(private location: Location, private service: CategoryServiceService) {
+    this.category = {
+      id: 0,
+      name: "",
+      number: 0,
+      questionList: []
+    }
   }
-}
-ngOnInit(){
-  const path = window.location.pathname;
+  ngOnInit() {
+    const path = window.location.pathname;
     const segments = path.split('/');
     const id = segments[segments.length - 1];
     this.service.getById(parseInt(id)).subscribe((data) => {
@@ -26,15 +26,15 @@ ngOnInit(){
       console.log("category", this.category);
 
     })
-}
-update(year: any) {
-  this.service.update(this.category.id, this.category).subscribe((data) => {
-    console.log(data)
-    alert('Cập nhật thành công.');
-    this.ngOnInit()
-  })
-}
-goBack() {
-  this.location.back();
-}
+  }
+  update(year: any) {
+    this.service.update(this.category.id, this.category).subscribe((data) => {
+      console.log(data)
+      alert('Cập nhật thành công.');
+      this.ngOnInit()
+    })
+  }
+  goBack() {
+    this.location.back();
+  }
 }

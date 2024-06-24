@@ -8,7 +8,7 @@ import { Answer } from '../Model/answer';
   providedIn: 'root'
 })
 export class AnswerService {
-  private REST_API_SERVER = 'http://localhost:8181/api/answer';
+  private REST_API_SERVER = 'http://localhost:8080/api/answer';
   
 
   constructor(private http: HttpClient, private auth: AuthService) {

@@ -1,7 +1,14 @@
-.container{
+/* .container{
     min-width: 880px;
     width: 100%;
     border: 1px solid gray;
+} */
+.container {
+    min-width: 880px;
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid gray;
+    box-sizing: border-box; /* Đảm bảo border nằm trong kích thước container */
 }
 .container .caption{
     width: 100%;

@@ -5,6 +5,6 @@ import { Question } from "./question"
 export class ExamDetail {
     id!:number
     question!: Question
-    answer!: Answer
+    answerID!: number | null
     examInfo!: ExamInfo
 }

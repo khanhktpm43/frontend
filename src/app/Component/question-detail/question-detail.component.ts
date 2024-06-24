@@ -8,18 +8,18 @@ import { Location } from '@angular/common';
   styleUrls: ['./question-detail.component.css']
 })
 export class QuestionDetailComponent {
-  public question!: Question 
-  constructor(private location:Location,private service: QuestionService){
+  public question!: Question
+  constructor(private location: Location, private service: QuestionService) {
 
   }
-  ngOnInit(){
+  ngOnInit() {
     const path = window.location.pathname;
     const segments = path.split('/');
     const id = segments[segments.length - 1];
     this.service.getById(parseInt(id)).subscribe((data) => {
-      
-this.question = data.data
-console.log(this.question)
+
+      this.question = data.data
+      console.log(this.question)
     })
   }
   goBack() {

@@ -9,7 +9,7 @@ import { ExamDetail } from '../Model/exam-detail';
   providedIn: 'root'
 })
 export class DetailService {
-  private REST_API_SERVER = 'http://localhost:8181/api/exam-detail';
+  private REST_API_SERVER = 'http://localhost:8080/api/exam-detail';
   
 
   constructor(private http: HttpClient, private auth: AuthService) {
@@ -25,7 +25,9 @@ getAll(): Observable<ResponseObject> {
 getById(id: number): Observable<ResponseObject> {
   return this.http.get<ResponseObject>(`${this.REST_API_SERVER}/` + id);
 }
-
+getByInfo(id: number): Observable<ResponseObject> {
+  return this.http.get<ResponseObject>(`${this.REST_API_SERVER}/exam-info/` + id);
+}
 create(detail: ExamDetail): Observable<ResponseObject> {
   return this.http.post<ResponseObject>(`${this.REST_API_SERVER}/`, detail);
 }

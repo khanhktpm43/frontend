@@ -18,6 +18,7 @@
       <div class="questionBox">
         <button class="qButton btn btn-outline-secondary"
           *ngFor="let item of listQuestion , index as i" (click)="scrollToDiv(item.id)"
+          
           [ngStyle]="{'background-color': getColor(item), 'color': getFontColor(item)}">Câu {{i+1}}
         </button>
       </div>
@@ -39,6 +40,7 @@
         <span>Phần thi</span>
 
         <Div #targetDiv class="Question" *ngFor="let item of listQuestion, index as i" [id]="item.id">
+      
           <div class="content">
             <div style="font-size: 22px;">
               <p style="color: maroon; margin-bottom: 5px;">Câu hỏi {{i+1}} : </p>
@@ -48,9 +50,9 @@
             <img *ngIf="item.image != null" src={{item.image}}>
           </div>
           <div class="answers">
-            <div class="choose" *ngFor="let answer of checkAnswerOfQuestion(item) , index as j">
+            <div class="choose" *ngFor="let answer of  checkAnswerOfQuestion(item) , index as j">
 
-              <button style="height: 45px;" class="btn btn-outline-secondary" class="option-button{{item.id}}"
+              <button style="height: 45px;" id="{{answer.id}}"class="btn btn-outline-secondary" class="option-button{{item.id}}"
                 (click)="clearSelection($event, item, answer)">{{myArray[j]}}: </button>
 
               <p style="margin: 0 0 0 10px;">{{answer.answer}}</p>

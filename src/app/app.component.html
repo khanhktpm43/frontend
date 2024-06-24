@@ -5,7 +5,7 @@
         <div class="menu">
             
             <div class="login-area">
-                <button style="background-color: whith; color: #428BCA; border: #428BCA; border: 2px solid;"  *ngIf="user!=null && user.role === 'ROLE_ADMIN'" (click)="onButtonClick2()">
+                <button   *ngIf="user!=null && user.role === 'ROLE_ADMIN'" (click)="onButtonClick2()">
                     Đăng xuất
                 </button>
             </div>

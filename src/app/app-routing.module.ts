@@ -16,6 +16,7 @@ import { DetailComponent } from './Component/detail/detail.component';
 import { adminGuard } from './Guard/admin.guard';
 import { userGuard } from './Guard/user.guard';
 import { InfoUserComponent } from './Component/info-user/info-user.component';
+import { EditInfoComponent } from './Component/edit-info/edit-info.component';
 const routes: Routes = [
   {path:'', redirectTo:"login", pathMatch:'full'},
   {path:'login', component:AuthComponent},
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path:'user/create', component:CreateUserComponent,canActivate:[authGuard,adminGuard]},
   {path:'user', component:UserComponent,canActivate:[authGuard,adminGuard]},
   {path:'user/detail/:id', component:DetailComponent,canActivate:[authGuard]},
+  {path:'user/edit-info/:id', component:EditInfoComponent,canActivate:[authGuard,adminGuard]},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

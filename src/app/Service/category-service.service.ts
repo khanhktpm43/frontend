@@ -8,7 +8,7 @@ import { Category } from '../Model/category';
   providedIn: 'root'
 })
 export class CategoryServiceService {
-  private REST_API_SERVER = 'http://localhost:8181/api/category';
+  private REST_API_SERVER = 'http://localhost:8080/api/category';
   
 
   constructor(private http: HttpClient, private auth: AuthService) {

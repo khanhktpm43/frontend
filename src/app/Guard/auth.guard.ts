@@ -24,7 +24,7 @@ export class authGuard implements CanActivate{
     } else {
       
       alert('Vui lòng đăng nhập!!!');
-      // this.router.navigate(['/login']);
+      this.router.navigate(['/login']);
       return false;
     }
   }

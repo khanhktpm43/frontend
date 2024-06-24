@@ -9,7 +9,7 @@ import { User } from '../Model/user';
   providedIn: 'root'
 })
 export class InfoService {
-  private REST_API_SERVER = 'http://localhost:8181/api/exam-info';
+  private REST_API_SERVER = 'http://localhost:8080/api/exam-info';
   
 
   constructor(private http: HttpClient, private auth: AuthService) {

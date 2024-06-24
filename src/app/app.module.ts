@@ -28,6 +28,7 @@ import { UserComponent } from './Component/user/user.component';
 import { CountdownFormatPipe } from './Pipe/countdown-format.pipe';
 import { DetailComponent } from './Component/detail/detail.component';
 import { InfoUserComponent } from './Component/info-user/info-user.component';
+import { EditInfoComponent } from './Component/edit-info/edit-info.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { InfoUserComponent } from './Component/info-user/info-user.component';
     CountdownFormatPipe,
     DetailComponent,
     InfoUserComponent,
+    EditInfoComponent,
   ],
   imports: [
     NgxPaginationModule,
