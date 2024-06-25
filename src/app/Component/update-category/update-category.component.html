@@ -1,26 +1,26 @@
 <div class="container">
-    <div class="caption">
+  <div class="caption">
+    <i class="fa-solid fa-tag"></i>
+    <div class="caption" style="display: flex;justify-content: flex-end;">
       <i class="fa-solid fa-tag"></i>
-      <div class="caption" style="display: flex;justify-content: flex-end;">
-        <i class="fa-solid fa-tag"></i>
-        <div class="back-area" style="justify-content: flex-end;  display: flex;">
-          <button  (click)="goBack()">Quay lại</button>
-        </div>
+      <div class="back-area" style="justify-content: flex-end;  display: flex;">
+        <button (click)="goBack()">Quay lại</button>
       </div>
     </div>
-    <div class="main">
-      <div class="create-form">
-        <span>Cập nhật danh mục</span>
-        <form #formUpdate="ngForm" (ngSubmit)="update(formUpdate)">
-          <input [(ngModel)]="category.name" name="name" #name="ngModel" type="text" placeholder="Tên danh mục"
-            autocomplete="off" required>
-            <input [(ngModel)]="category.number" name="number" #number="ngModel" type="text" placeholder="Số câu trong đề"
-            autocomplete="off" required>
-          <button>Cập nhật</button>
-        </form>
-      </div>
-      
-    </div>
-  
-    
   </div>
+  <div class="main">
+    <div class="create-form">
+      <span>Cập nhật danh mục</span>
+      <form #formUpdate="ngForm" (ngSubmit)="update(formUpdate)">
+        <input [(ngModel)]="category.name" name="name" #name="ngModel" type="text" placeholder="Tên danh mục"
+          autocomplete="off" required>
+        <input [(ngModel)]="category.number" name="number" #number="ngModel" type="text" placeholder="Số câu trong đề"
+          autocomplete="off" required>
+        <button>Cập nhật</button>
+      </form>
+    </div>
+
+  </div>
+
+
+</div>

@@ -11,8 +11,7 @@
   <div class="caption" style="display: flex;justify-content: flex-end;">
     <i class="fa-solid fa-tag"></i>
 
-    <button 
-    (click)="goBack()">Quay lại</button>
+    <button (click)="goBack()">Quay lại</button>
 
   </div>
   <div class="main">
@@ -32,8 +31,7 @@
         <div class="answers">
           <div class="choose" *ngFor="let answer of checkAnswerOfQuestion(item.question), index as j">
 
-            <button style="height: 45px;" class="btn btn-outline-dark"
-            [ngStyle]="{
+            <button style="height: 45px;" class="btn btn-outline-dark" [ngStyle]="{
               'background-color': (answer.check && item.answer != null ) ? 'limegreen' : (!answer.check && answer.id === item.answer) ? 'crimson' : ''
             }">{{myArray[j]}}: </button>
 

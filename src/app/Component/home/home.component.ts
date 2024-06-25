@@ -116,13 +116,13 @@ export class HomeComponent {
 
           //     // Thực hiện các hành động khác với mỗi item
           //   }
-            
+
 
 
           // });
           this.detailService.getByInfo(this.info.id).subscribe(data => {
             console.log("aaaaaaaaaaaaaaa2", data.data);
-          
+
             // Hàm đệ quy để thực hiện các yêu cầu API một cách tuần tự
             const processItem = (index: number) => {
               if (index < data.data.length) {
@@ -137,9 +137,9 @@ export class HomeComponent {
                   };
                   this.listDetail.push(detail);
                   this.setAnsweredQuestionColor();
-          
+
                   console.log("Câu hỏi đã thêm:", question.data);
-          
+
                   // Gọi đệ quy để xử lý tiếp tục với phần tử tiếp theo
                   processItem(index + 1);
                 });
@@ -149,11 +149,11 @@ export class HomeComponent {
                 // Thực hiện các hành động khác sau khi đã có đầy đủ dữ liệu
               }
             };
-          
+
             // Bắt đầu xử lý từ phần tử đầu tiên của mảng data.data
             processItem(0);
           });
-          
+
 
         }
         // if (check.data == null) {
@@ -162,7 +162,7 @@ export class HomeComponent {
 
         //     this.listQuestion = data.data
         //     console.log("lisquestion",this.listQuestion);
-            
+
         //     this.infoService.create(this.info).subscribe(examInfo => {
         //       this.info.id = examInfo.data.id
         //       this.listQuestion.forEach(item => {
@@ -176,7 +176,7 @@ export class HomeComponent {
         //           detail.id = data.data.id
         //           this.listDetail.push(detail)
         //           console.log(detail);
-                  
+
         //         })
         //       })
         //     })
@@ -188,11 +188,11 @@ export class HomeComponent {
           this.categoryService.getData().subscribe(async data => {
             this.listQuestion = data.data;
             console.log("lisquestion", this.listQuestion);
-        
+
             try {
-              const examInfo : any = await this.infoService.create(this.info).toPromise();
+              const examInfo: any = await this.infoService.create(this.info).toPromise();
               this.info.id = examInfo.data.id;
-        
+
               for (const item of this.listQuestion) {
                 let detail: any = {
                   id: 0,
@@ -200,7 +200,7 @@ export class HomeComponent {
                   answerID: null,
                   examInfo: examInfo.data
                 };
-        
+
                 const detailData: any = await this.detailService.create(detail).toPromise();
                 detail.id = detailData.data.id;
                 this.listDetail.push(detail);

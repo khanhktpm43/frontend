@@ -1,47 +1,46 @@
-
 <div class="container">
-    <div class="caption">
-      <i class="fa-solid fa-tag"></i>
-      <span>Danh mục</span>
-    </div>
-    <div class="main">
-      <div class="create-form">
-        <span>Thêm Danh mục</span>
-        <form #formCreate="ngForm" (ngSubmit)="create(formCreate)">
-          <input [(ngModel)]="category.name" name="name" #name="ngModel" type="text" placeholder="Danh mục"
-            autocomplete="off" required>
-         
-          <button>Thêm</button>
-        </form>
-      </div>
-      <div class="table">
-        <span>Danh sách danh mục</span>
-        <table>
-          <thead>
-            <tr>
-              <th>STT</th>
-              <th>Tên</th>
-              <th>Số câu hỏi trong đề</th>
-              
-              <th>Chức năng</th>
-            </tr>
-          </thead>
-          <tbody *ngFor="let item of list, index as i">
-            <tr>
-              <td>{{item.id}}</td>
-              <td>{{item.name}}</td>
-              <td>{{item.number}}</td>
-              <td>
-                <div class="control" style="font-size: 80%">
-                  <button (click)="delete(item.id)">Xóa</button>
-                   <button (click)="update(item.id)">Cập nhật</button>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  
-    
+  <div class="caption">
+    <i class="fa-solid fa-tag"></i>
+    <span>Danh mục</span>
   </div>
+  <div class="main">
+    <div class="create-form">
+      <span>Thêm Danh mục</span>
+      <form #formCreate="ngForm" (ngSubmit)="create(formCreate)">
+        <input [(ngModel)]="category.name" name="name" #name="ngModel" type="text" placeholder="Danh mục"
+          autocomplete="off" required>
+
+        <button>Thêm</button>
+      </form>
+    </div>
+    <div class="table">
+      <span>Danh sách danh mục</span>
+      <table>
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Tên</th>
+            <th>Số câu hỏi trong đề</th>
+
+            <th>Chức năng</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of list, index as i">
+          <tr>
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.number}}</td>
+            <td>
+              <div class="control" style="font-size: 80%">
+                <button (click)="delete(item.id)">Xóa</button>
+                <button (click)="update(item.id)">Cập nhật</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+</div>

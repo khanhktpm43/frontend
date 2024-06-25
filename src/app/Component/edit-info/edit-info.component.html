@@ -1,27 +1,30 @@
 <div class="container">
-    <div class="caption">
-        <i class="fa-solid fa-tag"></i>
-        <div class="caption" style="display: flex;justify-content: flex-end;">
-          <i class="fa-solid fa-tag"></i>
-          <div class="back-area" style="justify-content: flex-end;  display: flex;">
-            <button  (click)="goBack()">Quay lại</button>
-          </div>
-        </div>
-      
-    </div>
-    <div class="main">
-      <div class="create-form">
-        <span>Cập nhật thông tin</span>
-        <form class="them" #formCreate="ngForm" (ngSubmit)="update(formCreate)"
-          style="display: flex; flex-direction: column;">
-            <input [(ngModel)]="user.name" name="name" #name = "ngModel"  type="text" placeholder="Họ và tên" autocomplete="off" required>
-            <input [(ngModel)]="user.cccd" name="cccd" #cccd = "ngModel"  type="text" placeholder="Căn cước công dân" autocomplete="off" required>
-            <input [(ngModel)]="user.phone" name="phone" #phone = "ngModel"  type="text" placeholder="Số điện thoại" autocomplete="off" required>
-            <button>Cập nhật</button>
-        </form>
+  <div class="caption">
+    <i class="fa-solid fa-tag"></i>
+    <div class="caption" style="display: flex;justify-content: flex-end;">
+      <i class="fa-solid fa-tag"></i>
+      <div class="back-area" style="justify-content: flex-end;  display: flex;">
+        <button (click)="goBack()">Quay lại</button>
       </div>
-  
     </div>
-  
-  
+
   </div>
+  <div class="main">
+    <div class="create-form">
+      <span>Cập nhật thông tin</span>
+      <form class="them" #formCreate="ngForm" (ngSubmit)="update(formCreate)"
+        style="display: flex; flex-direction: column;">
+        <input [(ngModel)]="user.name" name="name" #name="ngModel" type="text" placeholder="Họ và tên"
+          autocomplete="off" required>
+        <input [(ngModel)]="user.cccd" name="cccd" #cccd="ngModel" type="text" placeholder="Căn cước công dân"
+          autocomplete="off" required>
+        <input [(ngModel)]="user.phone" name="phone" #phone="ngModel" type="text" placeholder="Số điện thoại"
+          autocomplete="off" required>
+        <button>Cập nhật</button>
+      </form>
+    </div>
+
+  </div>
+
+
+</div>

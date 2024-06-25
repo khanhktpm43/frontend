@@ -8,8 +8,8 @@ import { AuthService } from '../Service/auth-service.service';
   providedIn: 'root',
 })
 
-export class authGuard implements CanActivate{
-  constructor(private authService: AuthService, private router: Router) {}
+export class authGuard implements CanActivate {
+  constructor(private authService: AuthService, private router: Router) { }
 
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -22,7 +22,7 @@ export class authGuard implements CanActivate{
     if (this.authService.isAuthenticated()) {
       return true;
     } else {
-      
+
       alert('Vui lòng đăng nhập!!!');
       this.router.navigate(['/login']);
       return false;

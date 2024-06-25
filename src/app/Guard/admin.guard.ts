@@ -8,14 +8,14 @@ import { AuthService } from '../Service/auth-service.service';
   providedIn: 'root',
 })
 
-export class adminGuard implements CanActivate{
-  constructor(private authService: AuthService, private router: Router) {}
+export class adminGuard implements CanActivate {
+  constructor(private authService: AuthService, private router: Router) { }
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ):  Promise<boolean> {
-    
+  ): Promise<boolean> {
+
     return this.checkAdmin();
   }
 
@@ -25,15 +25,15 @@ export class adminGuard implements CanActivate{
       return true;
     } else {
       alert('Không có quyền truy cập!!!');
-      this.authService.logout().subscribe(data=>{ 
+      this.authService.logout().subscribe(data => {
         this.authService.removeTokenCookie()
-        
-       
+
+
         this.router.navigate(['login/'])
-        })
-     
+      })
+
       return false;
     }
   }
-  
+
 };

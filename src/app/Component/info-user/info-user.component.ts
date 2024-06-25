@@ -47,9 +47,9 @@ export class InfoUserComponent {
     // Xử lý logic khi button được click
     console.log('Button Logout');
   }
-click(){
-  if(this.user.examInfo !=null){
-  this.router.navigate(['user/detail/',this.user.examInfo.id]);
-}
-}
+  click() {
+    if (this.user.examInfo != null) {
+      this.router.navigate(['user/detail/', this.user.examInfo.id]);
+    }
+  }
 }

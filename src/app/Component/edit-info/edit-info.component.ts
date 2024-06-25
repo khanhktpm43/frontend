@@ -8,34 +8,34 @@ import { User } from 'src/app/Model/user';
   styleUrls: ['./edit-info.component.css']
 })
 export class EditInfoComponent {
-  user! : any
-  id !:number 
-  constructor(private location: Location, private authService: AuthService){
-    this.user={
-     
-      name:"",
-      
-      cccd:"",
-      phone:"",
-     
+  user!: any
+  id !: number
+  constructor(private location: Location, private authService: AuthService) {
+    this.user = {
+
+      name: "",
+
+      cccd: "",
+      phone: "",
+
     }
   }
-  ngOnInit(){
+  ngOnInit() {
     const path = window.location.pathname;
     const segments = path.split('/');
-     this.id = parseInt(segments[segments.length - 1]);
-    this.authService.getById(this.id).subscribe(data=>{
+    this.id = parseInt(segments[segments.length - 1]);
+    this.authService.getById(this.id).subscribe(data => {
       this.user = data.data
     })
   }
   goBack() {
     this.location.back();
   }
-update(form:any){
-  if (form.valid) {
-    this.authService.edit(this.id,this.user).subscribe(data=>{
-      
-    })
+  update(form: any) {
+    if (form.valid) {
+      this.authService.edit(this.id, this.user).subscribe(data => {
+
+      })
+    }
   }
-}
 }

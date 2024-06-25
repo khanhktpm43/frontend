@@ -16,7 +16,7 @@ export class DetailComponent {
   public Item: any
   myArray: string[] = ['A', 'B', 'C', 'D'];
   public list: { question: number, answer: number }[] = []
-  public listResult: { question: Question | null, answer: number |null }[] = []
+  public listResult: { question: Question | null, answer: number | null }[] = []
   constructor(private location: Location, private infoService: InfoService, private detailService: DetailService, private questionService: QuestionService, private answerService: AnswerService) {
 
   }
@@ -51,21 +51,21 @@ export class DetailComponent {
     const path = window.location.pathname;
     const segments = path.split('/');
     const id = segments[segments.length - 1];
-  
+
     try {
       const examInfo = await this.infoService.getById(parseInt(id)).toPromise();
       if (examInfo && examInfo.data) {
         this.Item = examInfo.data;
         console.log("bbbbbbbbb", this.Item);
-  
+
         for (let item of this.Item.examDetailList) {
           let object: { question: number, answer: number | null } = { question: 0, answer: null };
-  
+
           const detailData = await this.detailService.getById(item.id).toPromise();
           if (detailData && detailData.data) {
             object.question = detailData.data.questionId;
             object.answer = detailData.data.answerId;
-  
+
             const questionData = await this.questionService.getById(object.question).toPromise();
             if (questionData && questionData.data) {
               let object1: { question: Question | null, answer: number | null } = { question: null, answer: object.answer };
@@ -74,15 +74,15 @@ export class DetailComponent {
             }
           }
         }
-  
+
         console.log("aaaaaaaaaaaaaaaa", this.listResult);
       }
     } catch (error) {
       console.error("An error occurred:", error);
     }
   }
-  
-  
+
+
   goBack() {
     this.location.back();
   }
@@ -91,7 +91,7 @@ export class DetailComponent {
     let answerList: Answer[] = [];
     if (question)
       for (let ans of question.answerList) {
-        if (ans.answer !== '' )
+        if (ans.answer !== '')
           answerList.push(ans);
       }
     return answerList;

@@ -25,48 +25,51 @@
     </form>
   </div> -->
 
-  
-  <div class="container">
-    <div class="caption">
+
+<div class="container">
+  <div class="caption">
+    <i class="fa-solid fa-tag"></i>
+    <!-- <span>Tài khoản</span> -->
+    <div class="caption" style="display: flex;justify-content: flex-end;">
       <i class="fa-solid fa-tag"></i>
-      <!-- <span>Tài khoản</span> -->
-      <div class="caption" style="display: flex;justify-content: flex-end;">
-        <i class="fa-solid fa-tag"></i>
-        <div class="back-area" style="justify-content: flex-end;  display: flex;">
-          <button  (click)="goBack()">Quay lại</button>
+      <div class="back-area" style="justify-content: flex-end;  display: flex;">
+        <button (click)="goBack()">Quay lại</button>
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="create-form">
+      <span>Thêm tài khoản mới</span>
+      <form #formCreate="ngForm" (ngSubmit)="create(formCreate)" style="display: flex; flex-direction: column;">
+        <input [(ngModel)]="user.name" name="name" #name="ngModel" type="text" placeholder="Họ tên" autocomplete="off"
+          required>
+        <input [(ngModel)]="user.cccd" name="cccd" #cccd="ngModel" type="text" placeholder="Căn cước công dân"
+          autocomplete="off" required>
+        <input [(ngModel)]="user.phone" name="phone" #phone="ngModel" type="text" placeholder="Số điện thoại"
+          autocomplete="off" required>
+        <input [(ngModel)]="user.userName" name="uname" #uname="ngModel" type="text" placeholder="Tên đăng nhập"
+          autocomplete="off" required>
+        <input [(ngModel)]="user.passWord" name="pass" #pass="ngModel" type="password" placeholder="Mật khẩu"
+          autocomplete="off" required>
+
+        <div class="choose-area">
+
+
+
+
+          <div class="choose">
+            <label>Quyền:</label>
+            <select name="role" [(ngModel)]="user.role">
+              <option *ngFor="let item3 of listRole" [ngValue]="item3">{{item3}}</option>
+            </select>
+          </div>
+
         </div>
-      </div>
+        <button>Tạo</button>
+      </form>
     </div>
-    <div class="main">
-      <div class="create-form">
-        <span>Thêm tài khoản mới</span>
-        <form #formCreate="ngForm" (ngSubmit)="create(formCreate)" style="display: flex; flex-direction: column;">
-            <input [(ngModel)]="user.name" name="name" #name = "ngModel"  type="text" placeholder="Họ tên" autocomplete="off" required>
-            <input [(ngModel)]="user.cccd" name="cccd" #cccd = "ngModel"  type="text" placeholder="Căn cước công dân" autocomplete="off" required>
-            <input [(ngModel)]="user.phone" name="phone" #phone = "ngModel"  type="text" placeholder="Số điện thoại" autocomplete="off" required>
-            <input [(ngModel)]="user.userName" name="uname" #uname = "ngModel"  type="text" placeholder="Tên đăng nhập" autocomplete="off" required>
-            <input [(ngModel)]="user.passWord" name="pass" #pass = "ngModel"  type="password" placeholder="Mật khẩu" autocomplete="off" required>
-            
-            <div class="choose-area">
-              
-                
-                
-                
-                <div class="choose">
-                    <label>Quyền:</label>
-                    <select name="role"[(ngModel)]="user.role">
-                        <option *ngFor="let item3 of listRole" [ngValue]="item3">{{item3}}</option>
-                    </select>
-                </div>
-                
-            </div>
-            <button>Tạo</button>
-        </form>
-      </div>
-      
-    </div>
-  
-    
+
   </div>
 
 
+</div>

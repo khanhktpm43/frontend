@@ -1,14 +1,15 @@
 <div class="container">
-<form #formLogin="ngForm" (ngSubmit)="Login(formLogin)">
-    <div class="info">
-        
-        <h3>Trung tâm sát hạch bằng lái xe</h3>
-        <h4>Hạng A1</h4>
-        <span></span>
-    </div>
-    <input [(ngModel)]="user.userName" name="userName" #userName = "ngModel"  type="text" placeholder="Tên đăng nhập" autocomplete="off" required>
-    <input [(ngModel)]="user.passWord" name="passWord" #passWord = "ngModel"  type="password" placeholder="Mật khẩu" autocomplete="off" required>
-    <button>Đăng nhập</button>
-</form>
-</div>
+    <form #formLogin="ngForm" (ngSubmit)="Login(formLogin)">
+        <div class="info">
 
+            <h3>Trung tâm sát hạch bằng lái xe</h3>
+            <h4>Hạng A1</h4>
+            <span></span>
+        </div>
+        <input [(ngModel)]="user.userName" name="userName" #userName="ngModel" type="text" placeholder="Tên đăng nhập"
+            autocomplete="off" required>
+        <input [(ngModel)]="user.passWord" name="passWord" #passWord="ngModel" type="password" placeholder="Mật khẩu"
+            autocomplete="off" required>
+        <button>Đăng nhập</button>
+    </form>
+</div>
